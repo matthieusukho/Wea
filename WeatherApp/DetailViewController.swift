@@ -33,7 +33,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 5
     }
     
     
@@ -45,6 +45,10 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
             return forecast?.hourly.count ?? 0
         case 2:
             return forecast?.daily.count ?? 0
+        case 3:
+            return 1
+        case 4:
+            return 1
         default:
             return 1
             
@@ -71,7 +75,18 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
                 cell.configure(daily: forecast.daily[indexPath.row])
             }
             return cell
-            
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "infos1Cell", for: indexPath) as! Infos1Cell
+            if let forecast = forecast {
+                cell.configure(withForecast: forecast)
+            }
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "infos2Cell", for: indexPath) as! Infos2Cell
+            if let forecast = forecast {
+                cell.configure(withForecast: forecast)
+            }
+            return cell
         default:
             return UITableViewCell()
         }
@@ -86,7 +101,6 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
         Alamofire.request(url).responseJSON { response in
             if let value = response.result.value {
                 let json = JSON(value)
-                print(json)
                 self.forecast = Forecast(json: json)
                 self.tableView.reloadData()
             }

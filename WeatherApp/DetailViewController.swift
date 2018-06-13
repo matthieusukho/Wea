@@ -98,9 +98,11 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 1:
-            return "Aujourd'hui"
+            return "Today"
         case 2:
-            return "Semaine"
+            return "Week"
+        case 3:
+            return "Extra informations"
         default:
             return nil
         }

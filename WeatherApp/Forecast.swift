@@ -50,7 +50,7 @@ struct Forecast {
             let tempMin = json["daily"]["data"][i]["temperatureLow"].intValue
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE"
-            dateFormatter.locale = Locale(identifier: "fr_FR")
+            //dateFormatter.locale = Locale(identifier: "fr_FR")
             let day = dateFormatter.string(from: time)
             let data = (day, icon, tempMax, tempMin)
             self.daily.append(data)

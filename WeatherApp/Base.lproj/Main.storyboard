@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K0c-yh-feM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="73" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -209,6 +209,54 @@
                                             <outlet property="icon" destination="wuP-Sf-hF2" id="GXr-hc-U1E"/>
                                             <outlet property="tempMorning" destination="igt-p9-Mu3" id="ANi-ii-rSZ"/>
                                             <outlet property="tempNoon" destination="iOY-mn-fX7" id="72n-3c-Au3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayCell" id="AJr-3m-kR7" userLabel="DayCell" customClass="DayCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="216" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AJr-3m-kR7" id="7YZ-fQ-WmO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6o-kd-Ivx" userLabel="day">
+                                                    <rect key="frame" x="15" y="0.0" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e4-8B-Zh1" userLabel="humidity">
+                                                    <rect key="frame" x="257" y="22" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY7-t6-yq2" userLabel="day">
+                                                    <rect key="frame" x="15" y="22" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufa-QG-tPz" userLabel="temperature">
+                                                    <rect key="frame" x="257" y="0.0" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ufa-QG-tPz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b6o-kd-Ivx" secondAttribute="trailing" constant="8" id="12Z-0R-zhd"/>
+                                                <constraint firstItem="b6o-kd-Ivx" firstAttribute="leading" secondItem="7YZ-fQ-WmO" secondAttribute="leading" constant="16" id="VHl-cF-Ons"/>
+                                                <constraint firstItem="Ufa-QG-tPz" firstAttribute="centerY" secondItem="7YZ-fQ-WmO" secondAttribute="centerY" id="cD3-38-3iK"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ufa-QG-tPz" secondAttribute="trailing" constant="16" id="pQ2-VY-kk9"/>
+                                                <constraint firstItem="b6o-kd-Ivx" firstAttribute="centerY" secondItem="7YZ-fQ-WmO" secondAttribute="centerY" id="yhU-fO-sAJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="day" destination="b6o-kd-Ivx" id="hvB-Cy-rMl"/>
+                                            <outlet property="tempMorning" destination="Ufa-QG-tPz" id="IsZ-AX-GR9"/>
+                                            <outlet property="tempNoon" destination="2e4-8B-Zh1" id="N4e-HP-bR1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

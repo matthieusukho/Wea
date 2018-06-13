@@ -165,6 +165,52 @@
                                             <outlet property="time" destination="LaQ-HT-xEK" id="UuQ-Pj-Z29"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayCell" id="kFF-pe-Ewz" userLabel="DayCell" customClass="DayCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="172" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kFF-pe-Ewz" id="RK7-Bz-0hh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12S-vI-09u" userLabel="day">
+                                                    <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igt-p9-Mu3" userLabel="temperature">
+                                                    <rect key="frame" x="317" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOY-mn-fX7" userLabel="humidity">
+                                                    <rect key="frame" x="252" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wuP-Sf-hF2" userLabel="icon">
+                                                    <rect key="frame" x="92" y="-1" width="50" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="igt-p9-Mu3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="12S-vI-09u" secondAttribute="trailing" constant="8" id="5lg-Ti-LiW"/>
+                                                <constraint firstItem="12S-vI-09u" firstAttribute="centerY" secondItem="RK7-Bz-0hh" secondAttribute="centerY" id="JOT-KL-Y0q"/>
+                                                <constraint firstItem="igt-p9-Mu3" firstAttribute="centerY" secondItem="RK7-Bz-0hh" secondAttribute="centerY" id="syz-tG-de5"/>
+                                                <constraint firstAttribute="trailing" secondItem="igt-p9-Mu3" secondAttribute="trailing" constant="16" id="tdX-gX-Wbt"/>
+                                                <constraint firstItem="12S-vI-09u" firstAttribute="leading" secondItem="RK7-Bz-0hh" secondAttribute="leading" constant="16" id="x2c-5e-SUY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="day" destination="12S-vI-09u" id="cLl-Nv-2VL"/>
+                                            <outlet property="icon" destination="wuP-Sf-hF2" id="GXr-hc-U1E"/>
+                                            <outlet property="tempMorning" destination="igt-p9-Mu3" id="ANi-ii-rSZ"/>
+                                            <outlet property="tempNoon" destination="iOY-mn-fX7" id="72n-3c-Au3"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

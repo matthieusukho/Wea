@@ -44,7 +44,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
         case 1:
             return forecast?.hourly.count ?? 0
         case 2:
-            return 1
+            return forecast?.daily.count ?? 0
         default:
             return 1
             
@@ -65,6 +65,13 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
                 cell.configure(hourly: forecast.hourly[indexPath.row])
             }
             return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as! DayCell
+            if let forecast = forecast {
+                cell.configure(daily: forecast.daily[indexPath.row])
+            }
+            return cell
+            
         default:
             return UITableViewCell()
         }
@@ -88,15 +95,15 @@ class DetailViewController: UIViewController, MKMapViewDelegate, UITableViewData
         }
     }
     
-    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 1:
-            return "San Fransicso"
+            return "Aujourd'hui"
         case 2:
-            return "Instructions"
+            return "Semaine"
         default:
             return nil
         }
-    }*/
+    }
    
 }

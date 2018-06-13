@@ -17,7 +17,7 @@ class HeaderTableViewCell: UITableViewCell {
     func configure(withForecast forecast: Forecast) {
         temperature.text = "\(forecast.temperature)°C"
         icon.image = UIImage(named: "\(forecast.icon)") 
-        summary.text = forecast.summary
+        summary.text = forecast.dailySummary
         
     }
     
